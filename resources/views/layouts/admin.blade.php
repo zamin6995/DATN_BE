@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Sabujcha</title>
+    <title>Admin Lotus Thé</title>
     {{-- Icon --}}
     <link rel="shortcut icon" type="image/png"
         href="https://bizweb.dktcdn.net/100/461/240/themes/870680/assets/icon_why_2.png?1666679797652" />
@@ -73,9 +73,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ url()->route('dashboard') }}" class="brand-link">
-                <img src="{{ url('/rsrc') }}/dist/img/AdminSabujchaLogo.png" alt="AdminLTE Logo"
+                <img src="{{ url('/rsrc') }}/dist/img/AdminSabujchaLogo.svg" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Sabujcha Admin</span>
+                <span class="brand-text font-weight-light">Lotus Thé Admin</span>
             </a>
 
             <!-- Sidebar -->
@@ -592,7 +592,7 @@
                 "progressBar": true,
                 "closeButton": true,
             }
-            toastr.info("Xin chào đã đến với Sabujcha Admin Shop, hân hạnh!", "Welcome!", {
+            toastr.info("Xin chào đã đến với Lotus Thé Admin Shop, hân hạnh!", "Welcome!", {
                 timeOut: 4000
             });
         </script>
