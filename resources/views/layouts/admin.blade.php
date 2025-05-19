@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Admin Lotus Thé</title>
     {{-- Icon --}}
     <link rel="shortcut icon" type="image/png"
@@ -19,7 +20,7 @@
     {{-- Toast CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
         integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin" />
 
     {{-- Booostrap CDN --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -484,7 +485,7 @@
         <footer class="main-footer">
             <span class="title-brand">
                 <i class="fas fa-mug-hot"></i>
-                <strong>Sabujcha Tea</strong>
+                <strong>Lotus Thé Tea</strong>
                 <i>- Connecting people and nature, elevating the essence of Vietnamese tea.</i>
             </span>
 
@@ -512,13 +513,13 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url('/rsrc') }}/dist/js/pages/dashboard3.js"></script>
 
-    <script src="https://cdn.tiny.cloud/1/67ijyoq61saq48g0t5wsg28ivcoa0kc39u7axl8mqasxguo8/tinymce/7/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/67ijyoq61saq48g0t5wsg28ivcoa0kc39u7axl8mqasxguo8/tinymce/7/tinymce.min.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+
     <script>
         var editor_config = {
-            path_absolute: "http://backend.test/public/",
+            path_absolute: "http://truongnx_2023_03_07_backend.test/public/",
 
-            selector: 'textarea',
+            selector: 'textareae',
             relative_urls: false,
             plugins: [
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -550,6 +551,12 @@
                         callback(message.content);
                     }
                 });
+            },
+            setup: function (editor) {
+                editor.on('init', function () {
+                    const warn = document.querySelector('.tox-notifications-container');
+                    if (warn) warn.style.display = 'none';
+                });
             }
         };
 
@@ -563,7 +570,7 @@
     {{-- Toast CDN --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="strict-origin-when-cross-origin"></script>
     {{-- Has status --}}
     @if (Session::has('statusSuccess'))
         <script>

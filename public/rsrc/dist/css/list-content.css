@@ -61,7 +61,6 @@ a:hover {
     top: 0px;
     left: 0;
 }
-
 #list {
     flex: auto;
     /* height: calc(100vh - 58px); */
@@ -324,4 +323,10 @@ ul#sidebar-menu * {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+
+
+.main-footer {
+    margin-left: 0!important;
 }

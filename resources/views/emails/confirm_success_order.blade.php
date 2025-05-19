@@ -160,12 +160,12 @@
         <div>
             <p>Quý khách vui lòng giữ lại hóa đơn, hộp sản phẩm và phiếu bảo hành (nếu có) để đổi trả hàng hoặc bảo hành
                 khi cần thiết.</p>
-            <p>Liên hệ Hotline <strong style="color:#099202">0374.993.702</strong> (8-21h cả T7,CN).</p>
+            <p>Liên hệ Hotline <strong style="color:#099202">0978.556.847</strong> (8-21h cả T7,CN).</p>
             <div style="height:auto">
                 <p>
                     Quý khách nhận được email này vì đã dùng email này đặt hàng tại cửa hàng trực tuyến Lotus Thé.
                     <br><br>
-                    Nếu không phải quý khách đặt hàng vui lòng liên hệ số điện thoại 0374.993.702 hoặc email
+                    Nếu không phải quý khách đặt hàng vui lòng liên hệ số điện thoại 0978.556.847 hoặc email
                     <a style="color:red; font-weight:550;" href="mailto:{{ $infoUser['email'] }}"
                         target="_blank">{{ $infoUser['email'] }}</a> để hủy đơn hàng
                 </p>

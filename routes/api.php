@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\AuthController;
+use App\Http\Controllers\PayOSController;
 use App\Http\Controllers\Users\CategoryController;
 use App\Http\Controllers\Users\ProductController;
 use App\Http\Controllers\Users\FavoriteController;
@@ -106,6 +107,8 @@ Route::prefix("coupon")->controller(CouponController::class)->group(function () 
     Route::get('/', 'list')->name("user.coupon.list");
     Route::get('/list', 'list')->name("user.coupon.list");
 });
+
+Route::post('/payos/create-payment', [PayOSController::class, 'createPayment']);
 
 Route::group(
     ['middleware' => 'user:api'],
