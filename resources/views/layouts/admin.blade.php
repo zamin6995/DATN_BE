@@ -513,13 +513,14 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url('/rsrc') }}/dist/js/pages/dashboard3.js"></script>
 
-    <script src="https://cdn.tiny.cloud/1/67ijyoq61saq48g0t5wsg28ivcoa0kc39u7axl8mqasxguo8/tinymce/7/tinymce.min.js" referrerpolicy="strict-origin-when-cross-origin"></script>
+    <script src="https://cdn.tiny.cloud/1/wo9kr8zyihrktmpd54v9ldw4hah1ji89u9v6qsf5uo8nfmj2/tinymce/7/tinymce.min.js"
+        referrerpolicy="strict-origin-when-cross-origin"></script>
 
     <script>
         var editor_config = {
             path_absolute: "http://truongnx_2023_03_07_backend.test/public/",
 
-            selector: 'textareae',
+            selector: 'textarea',
             relative_urls: false,
             plugins: [
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -552,8 +553,8 @@
                     }
                 });
             },
-            setup: function (editor) {
-                editor.on('init', function () {
+            setup: function(editor) {
+                editor.on('init', function() {
                     const warn = document.querySelector('.tox-notifications-container');
                     if (warn) warn.style.display = 'none';
                 });

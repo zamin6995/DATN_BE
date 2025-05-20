@@ -17,6 +17,7 @@ use App\Http\Controllers\Users\CartController;
 use App\Http\Controllers\Users\OrderController;
 use App\Http\Controllers\Users\CouponController;
 use App\Http\Controllers\Users\BillController;
+use App\Http\Controllers\Users\ChatAIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,6 +111,8 @@ Route::prefix("coupon")->controller(CouponController::class)->group(function () 
 
 Route::post('/payos/create-payment', [PayOSController::class, 'createPayment']);
 
+
+
 Route::group(
     ['middleware' => 'user:api'],
     function () {
@@ -126,7 +129,6 @@ Route::group(
             Route::post('update-remember-token', 'updateRememberToken')->name("user.updateRememberToken");
             Route::post('check-remember-token', 'checkRememberToken')->name("user.checkRememberToken");
         });
-
         // Favorite
         Route::prefix("favorite")->controller(FavoriteController::class)->group(function () {
             Route::get("/", "list")->name("user.favorite");
@@ -138,7 +140,6 @@ Route::group(
 
             Route::post('/delete/{itemId?}', 'deleteByIdProduct')->name("user.favorite.deleteByIdProduct");
         });
-
         // Cart
         Route::prefix("cart")->controller(CartController::class)->group(function () {
             Route::get("/", "list")->name("user.cart");
@@ -151,7 +152,6 @@ Route::group(
             Route::post('/delete/{productId?}', 'deleteProductInCart')->name("user.cart.deleteProductInCart");
             Route::post('/deleteAll', 'deleteAll')->name("user.cart.deleteAll");
         });
-
         // Order
         Route::prefix("order")->controller(OrderController::class)->group(function () {
             Route::post('/create', 'create')->name("user.order.create");
@@ -162,17 +162,19 @@ Route::group(
 
             Route::post('/submit-order', 'submitOrder')->name("user.order.submitOrder");
         });
-
         // Coupon
         Route::prefix("coupon")->controller(CouponController::class)->group(function () {
             Route::post('/check', 'check')->name("user.coupon.check");
         });
-
         // Bill
         Route::prefix("bill")->controller(BillController::class)->group(function () {
             Route::get('/get-info/{idBill}', 'getInfoFromBill')->name("user.bill.getInfo");
         });
-
+        //CHAT AI
+        Route::prefix('/chat-ai')->group(function () {
+            Route::get('/', [ChatAIController::class, 'listQuestion']);
+            Route::post('/', [ChatAIController::class, 'sentQuestion']);
+        });
 
     }
 );
