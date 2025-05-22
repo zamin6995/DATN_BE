@@ -519,7 +519,7 @@
         var editor_config = {
             path_absolute: "http://truongnx_2023_03_07_backend.test/public/",
 
-            selector: 'textareae',
+            selector: 'textarea',
             relative_urls: false,
             plugins: [
                 "advlist autolink lists link image charmap print preview hr anchor pagebreak",

@@ -17,6 +17,7 @@ use App\Http\Controllers\Users\CartController;
 use App\Http\Controllers\Users\OrderController;
 use App\Http\Controllers\Users\CouponController;
 use App\Http\Controllers\Users\BillController;
+use App\Http\Controllers\Users\ChatAIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -173,6 +174,10 @@ Route::group(
             Route::get('/get-info/{idBill}', 'getInfoFromBill')->name("user.bill.getInfo");
         });
 
-
+        //CHAT AI
+        Route::prefix('/chat-ai')->group(function () {
+            Route::get('/', [ChatAIController::class, 'listQuestion']);
+            Route::post('/', [ChatAIController::class, 'sentQuestion']);
+        });
     }
 );
