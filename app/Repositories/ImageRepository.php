@@ -132,9 +132,13 @@ class ImageRepository extends BaseRepository
             [
                 "product_id" => $dataUpdateOrCreate['product_id'],
                 "color_id" => $dataUpdateOrCreate['color_id'],
-                "level" => 0
+                "level" => 0,
+                "status" => 0
             ],
-            ["link" => $dataUpdateOrCreate['link']]
+            [
+                "link" => $dataUpdateOrCreate['link'],
+                "status" => 0
+            ]
         );
     }
 
@@ -145,9 +149,13 @@ class ImageRepository extends BaseRepository
                 "product_id" => $dataUpdateOrCreate['product_id'],
                 "color_id" => $dataUpdateOrCreate['color_id'],
                 "link" => $dataUpdateOrCreate['link'],
-                "level" => 1
+                "level" => 1,
+                "status" => 0
             ],
-            ["link" => $dataUpdateOrCreate['link']]
+            [
+                "link" => $dataUpdateOrCreate['link'],
+                "status" => 0
+            ]
         );
     }
 }

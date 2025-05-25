@@ -24,7 +24,6 @@ class ChatAIController extends Controller
         $question = $request->input('question');
         $apiKey = config('services.gemini.api_key');
         $apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={$apiKey}";
-        logger("TEST api url: ", [$apiUrl]);
         // Sử dụng Guzzle để gửi yêu cầu POST tới API
         $client = new Client();
         $response = $client->post($apiUrl, [

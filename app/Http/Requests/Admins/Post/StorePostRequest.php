@@ -27,7 +27,7 @@ class StorePostRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required'],
             'content' => ['required'],
-            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif", 'max:21000'],
+            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif,webp", 'max:2100000'],
         ];
     }
 

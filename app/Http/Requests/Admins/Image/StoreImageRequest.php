@@ -26,9 +26,9 @@ class StoreImageRequest extends FormRequest
         return [
             'product_id' => ['nullable', 'numeric'],
             'color_id' => ['required', 'numeric'],
-            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif", 'max:21000'],
+            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif,webp", 'max:2100000'],
             "list_thumb" => ['required', 'array', 'min:1'],
-            "list_thumb.*" => ['required', 'file', "mimes:jpeg,png,jpg,gif", 'max:21000'],
+            "list_thumb.*" => ['required', 'file', "mimes:jpeg,png,jpg,gif,webp", 'max:2100000'],
         ];
     }
 

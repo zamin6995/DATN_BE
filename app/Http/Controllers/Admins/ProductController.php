@@ -50,7 +50,7 @@ class ProductController extends Controller
         // Handle action with constaint
         $products = $this->productService->searchProducts($keyWord, 20, $statusData, $where);
         $products->withQueryString();
-        
+
         $listCondition = array_keys(Constant::STATUS);
         // Get number record by status
         $countProductsSearch = $products->total();

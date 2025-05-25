@@ -24,9 +24,9 @@ class EditImageProductRequest extends FormRequest
     public function rules()
     {
         return [
-            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif", 'max:21000'],
+            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif,webp", 'max:2100000'],
             "list_thumb" => ['required', 'array', 'min:1'],
-            "list_thumb.*" => ['required', 'file', "mimes:jpeg,png,jpg,gif", 'max:21000'],
+            "list_thumb.*" => ['required', 'file', "mimes:jpeg,png,jpg,gif,webp", 'max:2100000'],
             "color_id" => ['required', 'numeric', 'min:0'],
         ];
     }

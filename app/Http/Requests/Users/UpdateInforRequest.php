@@ -25,7 +25,7 @@ class UpdateInforRequest extends FormRequest
     {
         return [
             'first_name' => ['nullable', 'string', 'min:2', 'max:255'],
-            'last_name' => ['nullable', 'string', 'min:4', 'max:255'],
+            'last_name' => ['nullable', 'string', 'max:255'],
             'phone' => ['nullable', 'string', 'min:10', 'max:255'],
             'fax' => ['nullable', 'string', 'min:10', 'max:255'],
         ];

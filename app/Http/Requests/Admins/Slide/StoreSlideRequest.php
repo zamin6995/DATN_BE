@@ -27,7 +27,7 @@ class StoreSlideRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'level' => ['required', 'numeric', 'min:0'],
             'description' => ['required'],
-            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif", 'max:21000'],
+            "thumb" => ['required', 'file', "mimes:jpeg,png,jpg,gif,webp", 'max:2100000'],
         ];
     }
 
