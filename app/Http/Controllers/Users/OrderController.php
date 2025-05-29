@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Http\Requests\Users\Orders\UpdateOrderStatusRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 use App\Jobs\SendOrderSuccessEmailJob;
@@ -118,6 +118,29 @@ class OrderController extends Controller
                 }
             }
             return $this->sendSuccessResponse(['info' => false]);
+        } catch (\Exception $e) {
+            return $this->sendErrorResponse(['error' => $e->getMessage()]);
+        }
+    }
+
+
+    public function updateStatus(UpdateOrderStatusRequest $request) {
+        try {
+            $orderId = $request->get('order_id');
+
+            $dataOrder = [
+                'status' => Constant::ORDER_STATUS['PAID']
+            ];
+
+            $dataBill = [
+                'status' => Constant::BILL_STATUS['PAID']
+            ];
+
+            $response = [
+                'status_order' => $this->orderService->update($orderId, $dataOrder),
+                'status_bill'  => $this->billService->updateStatus($orderId, $dataBill)
+            ];
+            return $this->sendSuccessResponse($response);
         } catch (\Exception $e) {
             return $this->sendErrorResponse(['error' => $e->getMessage()]);
         }

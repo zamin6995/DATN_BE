@@ -84,4 +84,8 @@ class BillRepository extends BaseRepository
         }
         return $cnt;
     }
+
+    public function updateStatus($orderId, $data) {
+        return $this->model::where("order_id", $orderId)->update($data);
+    }
 }

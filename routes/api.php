@@ -157,6 +157,7 @@ Route::group(
         Route::prefix("order")->controller(OrderController::class)->group(function () {
             Route::post('/create', 'create')->name("user.order.create");
             Route::post('/update', 'update')->name("user.order.update");
+            Route::post('/update-status', 'updateStatus')->name("user.order.update");
 
             Route::get('/get-status', 'getStatus')->name("user.order.status");
             Route::get('/get-info', 'getInfoOrder')->name("user.order.info");

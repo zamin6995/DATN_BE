@@ -130,6 +130,8 @@ class BillService
             return redirect("bill/list")->with("status", "Bạn chưa chọn hành động nào để thực hiện!");
         }
     }
-
+    public function updateStatus($orderId, $data) {
+        return $this->billRepository->updateStatus($orderId, $data);
+    }
 
 }

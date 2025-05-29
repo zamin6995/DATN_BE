@@ -16,7 +16,7 @@
                     <form action="#" method="">
                         @csrf
                         <input type="text" class="form-control form-search" name="key_word"
-                            value="{{ request()->input('key_word') }}" placeholder="Tìm kiếm theo tên KH">
+                            value="{{ request()->input('key_word') }}" placeholder="Tìm kiếm theo mã đơn hàng">
                         <input type="submit" name="btn_search" value="Tìm kiếm" class="btn btn-primary">
                         <input type="hidden" name="status"
                             value="{{ empty(request()->input('status')) ? 'active' : request()->input('status') }}" />

@@ -118,4 +118,14 @@ class Constant
         "super" => "Super admin"
     ];
 
+    const ORDER_STATUS = [
+        'NOT_YET_PAY'=> 1,
+        'PAID'=> 2,
+    ];
+
+    const BILL_STATUS = [
+        'NOT_YET_PAY' => 0,
+        'PAID' => 1
+    ];
+
 }
